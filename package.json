@@ -1,0 +1,43 @@
+{
+  "name": "aula-mcp",
+  "version": "0.1.0",
+  "description": "MCP server (stdio) for Aula, the Danish school and daycare platform. MitID login without a browser, compact LLM-friendly tools.",
+  "main": "dist/index.js",
+  "bin": {
+    "aula-mcp": "dist/index.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "aula",
+    "mitid",
+    "denmark",
+    "school"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "cheerio": "^1.2.0",
+    "qrcode-terminal": "^0.12.0",
+    "tough-cookie": "^6.0.2",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/qrcode-terminal": "^0.12.2",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3"
+  }
+}
